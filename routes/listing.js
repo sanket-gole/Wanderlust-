@@ -4,6 +4,8 @@ const wrapAsync = require("../utils/wrapAsync.js")
 const ExpressError = require("../utils/ExpressError.js")
 const { listingSchema, reviewSchema } = require("../schema.js")
 const Listing = require("../models/listing.js");
+require('dotenv').config();
+
 
 const { isLoggedIn, isOwner, validateListing, isreviewAuthor } = require("../middleware.js");
 

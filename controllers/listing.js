@@ -30,6 +30,10 @@ module.exports.showListing = async(req, res) => {
 
 module.exports.createListing = async(req, res, next) => {
     try {
+        if (!req.file) {
+            console.log('File not uploaded!');
+            throw new Error('File not uploaded');
+        }
         const { path: url, filename } = req.file;
         const newListing = new Listing({
             ...req.body.listing,
